@@ -1,6 +1,4 @@
 
-=
-src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
 G
 xingchen-common/pom.xml,9\2\92a93dcb99fd61c2b2f6e56c18c2d8f0327db900
 I
@@ -55,16 +53,6 @@ S
 I
 xingchen-rpc-core/pom.xml,c\7\c7330d051a4c654b0b86fba3c963a93e62e965b2
 v
-Fxingchen-rpc-core/src/main/java/com/xingche/easy/conifg/RpcConfig.java,c\0\c0c3d94083ebbd3e7aba175331ef495b553073f3
-w
-Gxingchen-rpc-core/src/main/java/com/xingche/easy/utils/COnfigUtils.java,1\0\101dcde975bc06dcd0f76036653e9958f4ff794f
-w
-Gxingchen-rpc-core/src/main/java/com/xingche/easy/utils/ConfigUtils.java,a\d\ad451612f9e99af9eb942050c41a233bf1b1c92d
-y
-Ixingchen-rpc-core/src/main/java/com/xingche/easy/constant/RpcContant.java,3\4\34fd0e075d65ca376b6c8b27f188d202b52946b2
-t
-Dxingchen-rpc-core/src/main/java/com/xingche/easy/RpcApplication.java,a\1\a1d0f225b3bf8562cfef655e820ec0a60b6499ca
-v
 Fxingchen-rpc-core/src/main/java/com/xingche/core/conifg/RpcConfig.java,4\9\4990dd85e4b57f2249e225c3f58f62c28f894a5d
 w
 Gxingchen-rpc-core/src/main/java/com/xingche/core/utils/ConfigUtils.java,4\a\4aad24dc031ac388b148a7761a4f736cd1862fbe
@@ -102,3 +90,5 @@ W
 +xingchen-rpc-core/xingchen-rpc-easy (1).iml,e\e\eef508bc5fb01a07fdf13ed368ea633d25748210
 W
 'xingchen-rpc-easy/xingchen-rpc-easy.iml,e\b\eb1d2f8bec7a15031de49194260bbd646b33ab8b
+|
+Lxingchen-rpc-core/src/main/java/com/xingche/core/proxy/MockServiceProxy.java,c\b\cb1bccc51b3f71a6d3572a6febbb09df39caf8e4

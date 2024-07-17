@@ -13,5 +13,7 @@ public interface RpcContant {
      * 配置默认文件加载前缀
      */
     String DEFAILT_CONFIG_PREFIX="rpc";
+
+
 }
 

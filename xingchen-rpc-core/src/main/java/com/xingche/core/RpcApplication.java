@@ -2,8 +2,11 @@ package com.xingche.core;
 
 import com.xingche.core.conifg.RpcConfig;
 import com.xingche.core.constant.RpcContant;
+import com.xingche.core.proxy.MockServiceProxy;
 import com.xingche.core.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
+
+import java.lang.reflect.Proxy;
 
 /**
  * @author xing'chen
@@ -58,5 +61,18 @@ public class RpcApplication {
         }
         return rpcConfig;
     }
+    /**
+     * 根据服务类获取 Mock 代理对象
+     *
+     * @param serviceClass
+     * @param <T>
+     */
+    public static <T> T getMockProxy(Class<T> serviceClass) {
+        return (T) Proxy.newProxyInstance(
+                serviceClass.getClassLoader(),
+                new Class[]{serviceClass},
+        new MockServiceProxy());
+    }
+
 }
 

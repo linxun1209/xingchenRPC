@@ -38,7 +38,7 @@ public class ConfigUtils {
      * TODO
      * 提供以下扩展思路，可自行实现：
      *
-     * 1）支持读取 application.yml、application.yaml 等不同格式的配置文件。
+     * 1）支持读取 application.properties、application.yaml 等不同格式的配置文件。
      *
      * 2）支持监听配置文件的变更，并自动更新配置对象。1609216259264610306_0.14402598629452412
      *
@@ -66,7 +66,7 @@ public class ConfigUtils {
         if(StrUtil.isNotBlank(environment)){
             configFileBuilder.append("-").append(environment);
         }
-        configFileBuilder.append(".yml");
+        configFileBuilder.append(".properties");
         Props props=new Props(configFileBuilder.toString());
         return props.toBean(tClass,prefix);
     }
