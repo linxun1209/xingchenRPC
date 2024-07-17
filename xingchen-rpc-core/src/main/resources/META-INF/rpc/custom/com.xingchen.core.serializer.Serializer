@@ -1,0 +1,5 @@
+jdk=com.xingchen.core.serializer.JdkSerializer
+hessian=com.xingchen.core.serializer.HessianSerializer
+json=com.xingchen.core.serializer.JsonSerializer
+kryo=com.xingchen.core.serializer.KryoSerializer
+

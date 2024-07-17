@@ -1,0 +1,4 @@
+failBack=com.xingchen.core.fault.tolerant.FailBackTolerantStrategy
+failFast=com.xingchen.core.fault.tolerant.FailFastTolerantStrategy
+failOver=com.xingchen.core.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.xingchen.core.fault.tolerant.FailSafeTolerantStrategy

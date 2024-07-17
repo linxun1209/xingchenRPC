@@ -1,7 +1,7 @@
 package com.xingchen.consumer;
 
-import com.xingche.core.conifg.RpcConfig;
-import com.xingche.core.utils.ConfigUtils;
+import com.xingchen.core.conifg.RpcConfig;
+import com.xingchen.core.utils.ConfigUtils;
 
 /**
  * @author xing'chen

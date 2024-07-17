@@ -1,0 +1,2 @@
+no=com.xingchen.core.fault.retry.NoRetryStrategy
+fixedInterval=com.xingchen.core.fault.retry.FixedIntervalRetryStrategy

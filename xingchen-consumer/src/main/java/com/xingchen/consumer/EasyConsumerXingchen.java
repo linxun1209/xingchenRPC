@@ -1,6 +1,6 @@
 package com.xingchen.consumer;
 
-import com.xingche.core.proxy.ServiceProxyFactory;
+import com.xingchen.core.proxy.ServiceProxyFactory;
 import com.xingchen.common.model.User;
 import com.xingchen.common.service.UserService;
 
