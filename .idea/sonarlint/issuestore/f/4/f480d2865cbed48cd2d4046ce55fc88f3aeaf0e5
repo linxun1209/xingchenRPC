@@ -1,3 +1,5 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³˜Íêûÿÿÿÿ8Ð‚€Û‹2
 L	java:S106"+Replace this use of System.out by a logger.(ÁÞÔÖÿÿÿÿÿ8Ö‚€Û‹2
+R
+java:S1128"0Remove this unused import 'com.xingchen.common'.(ÛçåÝûÿÿÿÿ8¹“´ñ‹2

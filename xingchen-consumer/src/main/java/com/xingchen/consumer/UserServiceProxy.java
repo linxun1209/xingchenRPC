@@ -2,11 +2,10 @@ package com.xingchen.consumer;
 
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
-import com.xingche.easy.model.RpcRequest;
-import com.xingche.easy.model.RpcResponse;
-import com.xingche.easy.serializer.JdkSerializer;
-import com.xingche.easy.serializer.Serializer;
-import com.xingche.easy.server.HttpServerHandler;
+import com.xingche.core.model.RpcRequest;
+import com.xingche.core.model.RpcResponse;
+import com.xingche.core.serializer.JdkSerializer;
+import com.xingche.core.serializer.Serializer;
 import com.xingchen.common.model.User;
 import com.xingchen.common.service.UserService;
 

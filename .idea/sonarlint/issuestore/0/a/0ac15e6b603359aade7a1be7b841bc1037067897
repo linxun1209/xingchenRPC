@@ -1,5 +1,7 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(³˜Íêûÿÿÿÿ8¯Ì Û‹2
+k
+java:S2259"IA "NullPointerException" could be thrown; "userService" is nullable here.(ÖÚêşÿÿÿÿ8‹Ö´ñ‹2
 O
 java:S1135"2Complete the task associated to this TODO comment.(®¶€ı8²Ì Û‹2
 L	java:S106"+Replace this use of System.out by a logger.(„£õòùÿÿÿÿ8÷ü¢Û‹2

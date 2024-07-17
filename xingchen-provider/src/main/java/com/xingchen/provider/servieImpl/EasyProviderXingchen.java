@@ -1,8 +1,9 @@
 package com.xingchen.provider.servieImpl;
 
-import com.xingche.easy.registry.LocalRegistry;
-import com.xingche.easy.server.HttpServer;
-import com.xingche.easy.server.VertxHttpServer;
+import com.xingche.core.RpcApplication;
+import com.xingche.core.registry.LocalRegistry;
+import com.xingche.core.server.HttpServer;
+import com.xingche.core.server.VertxHttpServer;
 import com.xingchen.common.service.UserService;
 
 /**
@@ -15,6 +16,11 @@ public class EasyProviderXingchen {
 
     public static void main(String[] args) {
 
+
+        //RPC框架初始化
+        RpcApplication.init();
+
+        //注册服务
         LocalRegistry.register(UserService.class.getName(),UserServiceImpl.class);
         //启动web服务
         HttpServer httpServer=new VertxHttpServer();

@@ -7,11 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="xingchen-rpc-core" />
         <module name="xingchen-consumer" />
         <module name="xingchen-provider" />
         <module name="xingchen-common" />
         <module name="xingchen-rpc-easy" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xingchen-rpc-easy (1)" target="1.8" />
+      <module name="xingchen-rpc-easy (2)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
