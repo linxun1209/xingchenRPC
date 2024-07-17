@@ -55,8 +55,6 @@ public class ServiceProxy implements InvocationHandler {
         }
 
         return null;
-
-
     }
 }
 
