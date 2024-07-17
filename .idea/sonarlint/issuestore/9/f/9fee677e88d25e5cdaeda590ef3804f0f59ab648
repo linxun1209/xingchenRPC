@@ -1,0 +1,4 @@
+
+L	java:S106""+Replace this use of System.out by a logger.(àÆ¼öşÿÿÿÿ8šÍ™İ‹2
+U
+java:S1874<"3Remove this use of "newInstance"; it is deprecated.(Ï²§ïüÿÿÿÿ8Í™İ‹2
