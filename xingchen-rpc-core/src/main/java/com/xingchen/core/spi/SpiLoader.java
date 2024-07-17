@@ -20,6 +20,19 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version 1.0
  * @description: SPI加载器（支持键值对映射）
  * @date 2024/7/17 16:05
+ *
+ *
+ * todo 1）实现更多不同协议的序列化器。
+ *
+ * 参考思路：由于序列化器是单例，要注意序列化器的线程安全性（比如 Kryo 序列化库），可以使用 ThreadLocal。
+ *
+ * 2）序列化器工厂可以使用懒加载（懒汉式单例）的方式创建序列化器实例。
+ *
+ * 参考思路：目前是通过 static 静态代码块初始化的。
+ *
+ * 3）SPI Loader 支持懒加载，获取实例时才加载对应的类。
+ *
+ * 参考思路：可以使用双检索单例模式。
  */
 @Slf4j
 public class SpiLoader {
