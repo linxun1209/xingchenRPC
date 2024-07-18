@@ -120,3 +120,7 @@ Oxingchen-rpc-core/src/main/java/com/xingchen/core/registry/RegistryFactory.java
 Lxingchen-rpc-core/src/main/java/com/xingchen/core/registry/RegistryTest.java,7\3\73945db57c7d5e35010feab8cb814093de971035
 Ö
 Uxingchen-provider/src/main/java/com/xingchen/provider/servieImpl/ProviderExample.java,b\4\b4b74e0327ed6d521186c0bfe40ba2c06ffc4216
+Ñ
+Txingchen-rpc-core/src/main/java/com/xingchen/core/registry/RegistryServiceCache.java,9\7\979d84fe1ec754ba799271a52e44e9b2054a7a33
+Å
+Qxingchen-rpc-core/src/main/java/com/xingchen/core/registry/ZooKeeperRegistry.java,d\b\db907b667ac7ac028700a8d9d55d0cdc61b399b1

@@ -1,1 +1,2 @@
 etcd=com.xingchen.core.registry.EtcdRegistry
+zookeeper=com.xingchen.core.registry.ZooKeeperRegistry

@@ -49,6 +49,14 @@
         </dependency>
 
 
+        <!-- zookeeper -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-x-discovery</artifactId>
+            <version>5.6.0</version>
+        </dependency>
+
+
         <!-- 序列化 -->
         <!-- https://mvnrepository.com/artifact/com.caucho/hessian -->
         <dependency>
