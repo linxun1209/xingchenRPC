@@ -1,8 +1,11 @@
 package com.xingchen.core;
 
+import com.xingchen.core.conifg.RegistryConfig;
 import com.xingchen.core.conifg.RpcConfig;
 import com.xingchen.core.constant.RpcContant;
 import com.xingchen.core.proxy.MockServiceProxy;
+import com.xingchen.core.registry.Registry;
+import com.xingchen.core.registry.RegistryFactory;
 import com.xingchen.core.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,6 +31,11 @@ public class RpcApplication {
     public static void init(RpcConfig newRpcConfig){
         rpcConfig=newRpcConfig;
         log.info("RPC init, config ={}",newRpcConfig.toString());
+        // 注册中心初始化
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config = {}", registryConfig);
     }
 
 
@@ -45,6 +53,9 @@ public class RpcApplication {
         }
         init(newRpcConfig);
     }
+
+
+
 
 
     /**
