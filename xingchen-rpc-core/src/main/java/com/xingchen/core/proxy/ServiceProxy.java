@@ -4,6 +4,8 @@ import cn.hutool.core.collection.CollUtil;
 import com.xingchen.core.RpcApplication;
 import com.xingchen.core.conifg.RpcConfig;
 import com.xingchen.core.constant.RpcContant;
+import com.xingchen.core.fault.retry.RetryStrategy;
+import com.xingchen.core.fault.retry.RetryStrategyFactory;
 import com.xingchen.core.loadbalancer.LoadBalancer;
 import com.xingchen.core.loadbalancer.LoadBalancerFactory;
 import com.xingchen.core.model.RpcRequest;
@@ -68,12 +70,19 @@ public class ServiceProxy implements InvocationHandler {
 
             //负载均衡
             LoadBalancer loadBalancer= LoadBalancerFactory.getInstance(rpcConfig.getLoadBalancer());
-            //将调用方法名（请求路径）作为负载均衡参数
             Map<String,Object> requestParams=new HashMap<>();
             requestParams.put("methodName",rpcRequest.getMethodName());
             ServiceMetaInfo selecetedServiceMetaInfo = loadBalancer.select(requestParams,serviceMetaInfoList);
+
+            //将调用方法名（请求路径）作为负载均衡参数
+            RetryStrategy retryStrategy= RetryStrategyFactory.getInstance(rpcConfig.getRetryStrategy());
+            RpcResponse rpcResponse= retryStrategy.doRetry(() ->
+                    VertxTcpClient.doRequest(rpcRequest, selecetedServiceMetaInfo)
+            );
+            /*
            //发送TPC请求
             RpcResponse rpcResponse= VertxTcpClient.doRequest(rpcRequest,selecetedServiceMetaInfo);
+             */
             return rpcResponse.getData();
         }catch (Exception e) {
             throw new RuntimeException("调用失败");

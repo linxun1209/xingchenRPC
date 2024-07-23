@@ -1,5 +1,6 @@
 package com.xingchen.core.conifg;
 
+import com.xingchen.core.fault.retry.RetryStrategyKeys;
 import com.xingchen.core.loadbalancer.LoadBalancerKeys;
 import com.xingchen.core.serializer.SerializerKeys;
 import lombok.Data;
@@ -57,6 +58,11 @@ public class RpcConfig {
      * 负载均衡器
      */
     private String loadBalancer = LoadBalancerKeys.ROUND_ROBIN;
+
+    /**
+     * 重试策略
+     */
+    private String retryStrategy = RetryStrategyKeys.NO;
 
 
 }
