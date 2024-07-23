@@ -148,3 +148,15 @@ Sxingchen-rpc-core/src/main/java/com/xingchen/core/protocol/ProtocolMessageTest.
 Rxingchen-rpc-core/src/main/java/com/xingchen/core/server/tcp/TcpServerHandler.java,9\8\987882e3efc36b09e48aeaf2994c2c8b6545ec00
 ‰
 Yxingchen-rpc-core/src/main/java/com/xingchen/core/server/tcp/TcpBufferHandlerWrapper.java,2\3\23b10168f7050b1619b942d6d6e5e3910de54e8a
+€
+Pxingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/LoadBalancer.java,b\e\be065eaa82b5ede11cab9c1e386c3d75805bfed3
+Š
+Zxingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/RoundRobinLoadBalancer.java,e\7\e76ce6b24898ef3cbbf6d11b6f8b00cd1f3eda83
+†
+Vxingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/RandomLoadBalancer.java,b\3\b358e3bae5f735c464744136f0e81a90920dd005
+Ž
+^xingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/ConsistentHashLoadBalancer.java,d\0\d01188026943645ce3de9a01d1c81fb615de9c5e
+„
+Txingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/LoadBalancerKeys.java,3\0\3022e1c06e9ac9af6d1429d452358b5cc48bd868
+‡
+Wxingchen-rpc-core/src/main/java/com/xingchen/core/loadbalancer/LoadBalancerFactory.java,4\0\405281657e63642170a0744c722edf437c076491
