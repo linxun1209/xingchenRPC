@@ -92,7 +92,7 @@ public class EtcdRegistry implements Registry {
             return cacheServiecMetaInfoList;
         }
         //前缀搜索，结尾一定要加'/'
-        String searchPrefix=ETCD_ROOT_PATH+serviceKey+"/";
+        String searchPrefix=ETCD_ROOT_PATH+serviceKey;
         try{
             //前缀查询
             GetOption getOption = GetOption.builder().isPrefix(true).build();

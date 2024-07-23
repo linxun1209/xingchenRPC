@@ -10,6 +10,7 @@ import com.xingchen.core.registry.Registry;
 import com.xingchen.core.registry.RegistryFactory;
 import com.xingchen.core.server.HttpServer;
 import com.xingchen.core.server.VertxHttpServer;
+import com.xingchen.core.server.tcp.VertxTcpServer;
 
 /**
  * @author xing'chen
@@ -39,6 +40,10 @@ public class ProviderExample {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        // 启动 TCP 服务
+        VertxTcpServer vertxTcpServer = new VertxTcpServer();
+        vertxTcpServer.doStart(8088);
 
         // 启动 web 服务
         HttpServer httpServer = new VertxHttpServer();
