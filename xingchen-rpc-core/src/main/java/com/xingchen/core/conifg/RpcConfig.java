@@ -1,6 +1,7 @@
 package com.xingchen.core.conifg;
 
 import com.xingchen.core.fault.retry.RetryStrategyKeys;
+import com.xingchen.core.fault.tolerant.TolerantStrategyKeys;
 import com.xingchen.core.loadbalancer.LoadBalancerKeys;
 import com.xingchen.core.serializer.SerializerKeys;
 import lombok.Data;
@@ -63,6 +64,12 @@ public class RpcConfig {
      * 重试策略
      */
     private String retryStrategy = RetryStrategyKeys.NO;
+
+
+    /**
+     * 容错策略
+     */
+    private String tolerantStrategy = TolerantStrategyKeys.FAIL_FAST;
 
 
 }
