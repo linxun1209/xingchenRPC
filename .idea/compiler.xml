@@ -7,16 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="xingchen-rpc-core" />
-        <module name="xingchen-consumer" />
+        <module name="example-springboot-provider" />
         <module name="xingchen-provider" />
+        <module name="example-springboot-consumer" />
         <module name="xingchen-common" />
         <module name="xingchen-rpc-easy" />
+        <module name="xingchen-rpc-spring-boot-starter" />
+        <module name="xingchen-rpc-core" />
+        <module name="xingchen-consumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="xingchen-rpc-easy (1)" target="1.8" />
       <module name="xingchen-rpc-easy (2)" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="example-springboot-consumer" options="-parameters" />
+      <module name="example-springboot-provider" options="-parameters" />
+      <module name="xingchen-rpc-spring-boot-starter" options="" />
+    </option>
   </component>
 </project>

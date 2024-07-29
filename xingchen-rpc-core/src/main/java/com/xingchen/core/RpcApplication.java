@@ -2,7 +2,7 @@ package com.xingchen.core;
 
 import com.xingchen.core.conifg.RegistryConfig;
 import com.xingchen.core.conifg.RpcConfig;
-import com.xingchen.core.constant.RpcContant;
+import com.xingchen.core.constant.RpcConstant;
 import com.xingchen.core.proxy.MockServiceProxy;
 import com.xingchen.core.registry.Registry;
 import com.xingchen.core.registry.RegistryFactory;
@@ -49,7 +49,7 @@ public class RpcApplication {
     public static void init(){
         RpcConfig newRpcConfig;
         try {
-            newRpcConfig= ConfigUtils.loadConfig(RpcConfig.class, RpcContant.DEFAILT_CONFIG_PREFIX);
+            newRpcConfig= ConfigUtils.loadConfig(RpcConfig.class, RpcConstant.DEFAILT_CONFIG_PREFIX);
         }catch (Exception e){
             //配置加载失败，使用默认值
             newRpcConfig=new RpcConfig();

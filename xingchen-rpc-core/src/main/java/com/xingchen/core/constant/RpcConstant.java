@@ -6,7 +6,7 @@ package com.xingchen.core.constant;
  * @description: RPC相干常量
  * @date 2024/7/17 10:48
  */
-public interface RpcContant {
+public interface RpcConstant {
 
 
     /**

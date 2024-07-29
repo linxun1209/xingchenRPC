@@ -1,9 +1,11 @@
 package com.xingchen.core.proxy;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpResponse;
 import com.xingchen.core.RpcApplication;
 import com.xingchen.core.conifg.RpcConfig;
-import com.xingchen.core.constant.RpcContant;
+import com.xingchen.core.constant.RpcConstant;
 import com.xingchen.core.fault.retry.RetryStrategy;
 import com.xingchen.core.fault.retry.RetryStrategyFactory;
 import com.xingchen.core.fault.tolerant.TolerantStrategy;
@@ -19,6 +21,7 @@ import com.xingchen.core.serializer.Serializer;
 import com.xingchen.core.serializer.SerializerFactory;
 
 
+import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -47,24 +50,24 @@ public class ServiceProxy implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //指定序列化器
-        final Serializer serializer= SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
+        //final Serializer serializer= SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
 
         //构造请求
-        String ServiceName = method.getDeclaringClass().getName();
-        RpcRequest rpcRequest=RpcRequest.builder()
+            String ServiceName = method.getDeclaringClass().getName();
+            RpcRequest rpcRequest=RpcRequest.builder()
                 .serviceName(ServiceName)
                 .methodName(method.getName())
                 .parameterTypes(method.getParameterTypes())
                 .args(args)
                 .build();
-        try {
+
             // 从注册中心获取服务提供者请求地址
             //序列化
             RpcConfig rpcConfig = RpcApplication.getRpcConfig();
             Registry registry = RegistryFactory.getInstance(rpcConfig.getRegistryConfig().getRegistry());
             ServiceMetaInfo serviceMetaInfo = new ServiceMetaInfo();
             serviceMetaInfo.setServiceName(ServiceName);
-            serviceMetaInfo.setServiceVersion(RpcContant.DEFAULT_SERVICE_VERSION);
+            serviceMetaInfo.setServiceVersion(RpcConstant.DEFAULT_SERVICE_VERSION);
             List<ServiceMetaInfo> serviceMetaInfoList = registry.serviceDiscovery(serviceMetaInfo.getServiceKey());
             if (CollUtil.isEmpty(serviceMetaInfoList)) {
                 throw new RuntimeException("暂无服务地址");
@@ -89,15 +92,33 @@ public class ServiceProxy implements InvocationHandler {
                 TolerantStrategy tolerantStrategy = TolerantStrategyFactory.getInstance(rpcConfig.getTolerantStrategy());
                 rpcResponse = tolerantStrategy.doTolerant(null, e);
             }
-
-
             /*
            //发送TPC请求
             RpcResponse rpcResponse= VertxTcpClient.doRequest(rpcRequest,selecetedServiceMetaInfo);
              */
             return rpcResponse.getData();
-        }catch (Exception e) {
-            throw new RuntimeException("调用失败");
+
+        }
+
+    /**
+     * 发送 HTTP 请求
+     *
+     * @param selectedServiceMetaInfo
+     * @param bodyBytes
+     * @return
+     * @throws IOException
+     */
+    private static RpcResponse doHttpRequest(ServiceMetaInfo selectedServiceMetaInfo, byte[] bodyBytes) throws IOException {
+        final Serializer serializer = SerializerFactory.getInstance(RpcApplication.getRpcConfig().getSerializer());
+        // 发送 HTTP 请求
+        try (HttpResponse httpResponse = HttpRequest.post(selectedServiceMetaInfo.getServiceAddress())
+                .body(bodyBytes)
+                .execute()) {
+            byte[] result = httpResponse.bodyBytes();
+            // 反序列化
+            RpcResponse rpcResponse = serializer.deserialize(result, RpcResponse.class);
+            return rpcResponse;
         }
     }
+
 }

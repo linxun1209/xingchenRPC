@@ -1,7 +1,7 @@
 package com.xingchen.protocol;
 
 import cn.hutool.core.util.IdUtil;
-import com.xingchen.core.constant.RpcContant;
+import com.xingchen.core.constant.RpcConstant;
 import com.xingchen.core.model.RpcRequest;
 import com.xingchen.core.protocol.*;
 import io.vertx.core.buffer.Buffer;
@@ -34,7 +34,7 @@ public class ProtocolMessageTest {
         RpcRequest rpcRequest = new RpcRequest();
         rpcRequest.setServiceName("myService");
         rpcRequest.setMethodName("myMethod");
-        rpcRequest.setServiceVersion(RpcContant.DEFAULT_SERVICE_VERSION);
+        rpcRequest.setServiceVersion(RpcConstant.DEFAULT_SERVICE_VERSION);
         rpcRequest.setParameterTypes(new Class[]{String.class});
         rpcRequest.setArgs(new Object[]{"aaa", "bbb"});
         protocolMessage.setHeader(header);
